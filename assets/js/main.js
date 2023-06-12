@@ -45,8 +45,8 @@ function tagFeed() {
         ],
         responsive: {
             0: {
-                items: 1,
-                slideBy: 1
+                items: count > 1 ? 2 : count,
+                slideBy: count
             },
             1024: {
                 items: count > 1 ? 2 : count,

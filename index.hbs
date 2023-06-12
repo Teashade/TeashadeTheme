@@ -1,20 +1,30 @@
 {{!< default}}
 
+<style>
+    @media (max-width: 767px) {
+        .tag-name {
+            font-size: 2.5rem;
+        }
+        .tag-description {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
 <div class="content-area">
 <main class="site-main">
+    {{#get "pages" filter="primary_tag:projects" limit="all"}}
+        <div class="tag-feed owl" data-count="{{pagination.total}}">
 
-    {{#get "tags" limit="all"}}
-    <div class="tag-feed owl" data-count="{{pagination.total}}">
-
-        {{#foreach tags}}
+        {{#foreach pages}}
         <div class="tag u-placeholder">
             <img class="tag-image u-object-fit" src="{{#if feature_image}}{{img_url feature_image}}{{else}}{{@site.cover_image}}{{/if}}" alt="{{name}}">
             <div class="tag-content">
-                <h2 class="tag-name">{{name}}</h2>
+                <h2 class="tag-name">{{title}}</h2>
 
-                {{#if description}}
+                {{#if excerpt}}
                     <div class="tag-description">
-                        {{description}}
+                        {{excerpt}}
                     </div>
                 {{/if}}
             </div>
@@ -24,6 +34,6 @@
 
     </div>
     {{/get}}
-
+    
 </main>
 </div>

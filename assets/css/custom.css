@@ -1,0 +1,22 @@
+.site-header {
+    position: unset;
+}
+
+@media (max-width: 767px) {
+    .tag-name {
+        font-size: 2.5rem;
+    }
+    .tag-description {
+        font-size: 1.5rem;
+    }
+    .single-post .post-media {
+        width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .single-post .post-media {
+        max-width: 768px;
+        margin: 0 auto;
+    }
+}
